@@ -29,11 +29,11 @@ if uploaded_file:
         f.write(uploaded_file.getbuffer())
 
 
-    if "vectorstore" not in st.session_state:
-        st.session_state.vectorstore = set_vector_store(load_document(file_path))
+if "vectorstore" not in st.session_state:
+    st.session_state.vectorstore = set_vector_store(load_document(file_path))
 
-    if "conversation_chain" not in st.session_state:
-        st.session_state.conversation_chain = create_chain(st.session_state.vectorstore)
+if "conversation_chain" not in st.session_state:
+    st.session_state.conversation_chain = create_chain(st.session_state.vectorstore)
     
 
 for message in st.session_state.chat_history:

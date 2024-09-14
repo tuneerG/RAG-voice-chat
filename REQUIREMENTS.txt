@@ -9,3 +9,5 @@ faiss-cpu
 transformers==4.43.3
 sentence-transformers==3.0.1
 nltk==3.8.1
+streamlit-mic-recorder-0.0.8
+onnxruntime==1.19.0
