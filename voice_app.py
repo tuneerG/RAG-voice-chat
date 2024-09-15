@@ -31,12 +31,14 @@ option = st.sidebar.selectbox(
 )
 
 st.sidebar.write("Selected Language:", option)
-if option=="Bengali":
-    language='bn'
-elif option=="English":
-    language='en'
-else:
-    language='hi'
+# if option=="Bengali":
+#     language='bn'
+# elif option=="English":
+#     language='en'
+# else:
+#     language='hi'
+
+language='hi'
 
 if uploaded_file:
     file_path = f"{work_dir}/{uploaded_file.name}"
@@ -69,8 +71,9 @@ if user_voice:
             #TODO:COnvert Assitant response to voice
             assistant_response_eng = response["answer"]
             assistant_response=bottrans(assistant_response_eng,language)
-            texttoaudio(assistant_response)
-            
+            texttoaudio(assistant_response,language)
+            autoplay_audio("response.mp3")
+
             st.markdown(assistant_response)
             st.session_state.chat_history.append({"role": "assistant", "content": assistant_response})
 

@@ -6,8 +6,8 @@ from src.main import *
 # from audio_recorder_streamlit import audio_recorder
 from streamlit_mic_recorder import speech_to_text
 from deep_translator import GoogleTranslator
-from streamlit_TTS import auto_play, text_to_speech, text_to_audio
-
+from gtts import gTTS
+import base64
 
 
 
@@ -32,9 +32,24 @@ def usertrans(user_input,lang):
     return translated
 
 def bottrans(response,lang):
-    translated= GoogleTranslator(source=lang,target='hi').translate(response)
+    translated= GoogleTranslator(source='en',target='hi').translate(response)
     return translated
 
 def texttoaudio(text,lang):
-    audio=text_to_audio(text,language=lang)
-    auto_play(audio)
+    tts = gTTS(text,lang='hi')
+    tts.save('response.mp3')
+    
+def autoplay_audio(file_path: str):
+    with open(file_path, "rb") as f:
+        data = f.read()
+        b64 = base64.b64encode(data).decode()
+        md = f"""
+            <audio controls autoplay="true">
+            <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+            </audio>
+            """
+        st.markdown(
+            md,
+            unsafe_allow_html=True,
+        )
+        st.write("# Auto-playing Audio!")
