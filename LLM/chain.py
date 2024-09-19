@@ -1,11 +1,14 @@
-from dotenv import load_dotenv
-
+# from dotenv import load_dotenv
+import streamlit as st
 from src import main
 from langchain_groq import ChatGroq
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 
-load_dotenv()
+# load_dotenv()
+
+key=st.secrets['key']
+
 
 def create_chain(vectorstore):
     LLM=ChatGroq(

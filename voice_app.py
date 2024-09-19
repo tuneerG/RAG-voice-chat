@@ -2,11 +2,13 @@ from audio.voice import *
 from LLM.chain import *
 from src.main import *
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import streamlit as st
 
-load_dotenv()
+# load_dotenv()
 work_dir=os.path.dirname(os.path.abspath(__file__))
+
+key=st.secrets['key']
 
 st.set_page_config(
     page_title="Regional Chat-Bot",

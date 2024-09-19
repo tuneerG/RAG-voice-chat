@@ -1,12 +1,14 @@
 import os
 
-from dotenv import load_dotenv
-
+# from dotenv import load_dotenv
+import streamlit as st
 from langchain_community.document_loaders import UnstructuredPDFLoader
 from langchain_text_splitters.character import CharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
-load_dotenv()
+# load_dotenv()
+
+key=st.secrets['key']
 
 work_dir=os.path.dirname(os.path.abspath(__file__))
 
