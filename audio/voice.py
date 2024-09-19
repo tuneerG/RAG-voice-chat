@@ -32,11 +32,11 @@ def usertrans(user_input,lang):
     return translated
 
 def bottrans(response,lang):
-    translated= GoogleTranslator(source='en',target='hi').translate(response)
+    translated= GoogleTranslator(source='en',target=lang).translate(response)
     return translated
 
 def texttoaudio(text,lang):
-    tts = gTTS(text,lang='hi')
+    tts = gTTS(text,lang=lang)
     tts.save('response.mp3')
     
 def autoplay_audio(file_path: str):
