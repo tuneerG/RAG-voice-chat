@@ -1,3 +1,4 @@
+dotenv
 python-dotenv==1.0.1
 streamlit==1.37.0
 langchain-community==0.2.10
