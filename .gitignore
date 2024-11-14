@@ -14,6 +14,8 @@ __pycache__/
 *.mp3
 *.wav
 
+readme.txt
+
 # Distribution / packaging
 .Python
 build/
