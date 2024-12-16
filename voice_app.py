@@ -16,7 +16,7 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("Agriculture Voice-Bot - Llama 3.1")
+st.title("RAG voice chat – A Multiligual AI Voice ChatBot using Llama 3.1")
 st.write("A Llama-3.1 RAG voice-chat LLM bot using Groq API.")
 
 #initialise chat history in streamlit
